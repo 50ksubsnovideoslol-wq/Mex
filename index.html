@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Drive</title>
+    <title>Secondary Library</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="layout-left">
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>MexCraft Unblocked Games</h2>
+        </div>
+        <div class="search-container">
+            <input type="text" id="gameSearch" placeholder="Search...">
+        </div>
+        <nav class="sidebar-games" id="sidebarList">
+            <div class="sidebar-item" onclick="playGame('21ea52tvy')">Babel Tower</div><div class="sidebar-item" onclick="playGame('z7icb9p9u')">MotoX3m</div><div class="sidebar-item" onclick="playGame('0hi37a9ch')">MotoX3m 2</div><div class="sidebar-item" onclick="playGame('x85xox8wq')">MotoX3m 3</div><div class="sidebar-item" onclick="playGame('dcmg0mju6')">MotoX3M Pool Party</div><div class="sidebar-item" onclick="playGame('tbwd3zolv')">MotoX3m Spooky Land</div><div class="sidebar-item" onclick="playGame('ber7shpji')">MotoX3m Winter</div><div class="sidebar-item" onclick="playGame('m5a3n4xqf')">geometry dash lite</div><div class="sidebar-item" onclick="playGame('14eg0pfzi')">Geometry Dash SubZero</div><div class="sidebar-item" onclick="playGame('relao7dcs')">SoundBoard</div><div class="sidebar-item" onclick="playGame('i97of3qdy')">ChatBot</div><div class="sidebar-item" onclick="playGame('61nua11un')">Raldi's Crackhouse</div><div class="sidebar-item" onclick="playGame('a16pzig7l')">RedBall 4</div><div class="sidebar-item" onclick="playGame('jorgutp23')">Retro PingPong</div><div class="sidebar-item" onclick="playGame('npypsyotp')">Retro Bowl</div><div class="sidebar-item" onclick="playGame('zu1y32kr3')">2 3 4 Player Games</div><div class="sidebar-item" onclick="playGame('rdg6kly3q')">2048</div><div class="sidebar-item" onclick="playGame('ohefogsj7')">1v1.lol</div><div class="sidebar-item" onclick="playGame('ztrpehzbc')">Five Nights At Epstein's</div><div class="sidebar-item" onclick="playGame('7oxttsqkm')">FNAF</div><div class="sidebar-item" onclick="playGame('2ad8ccji2')">FNAF 2</div><div class="sidebar-item" onclick="playGame('rjzotar3f')">FNAF 3</div><div class="sidebar-item" onclick="playGame('ie527hfmr')">FNAF 4</div><div class="sidebar-item" onclick="playGame('d05de5x6w')">Temple Run 2</div><div class="sidebar-item" onclick="playGame('iqparlshg')">UnderTale Yellow</div><div class="sidebar-item" onclick="playGame('1mfl1e1bf')">99 Nights In The Forest</div><div class="sidebar-item" onclick="playGame('ivouit51l')">Slope</div><div class="sidebar-item" onclick="playGame('arfj2zxot')">EagleCraft Minecraft</div><div class="sidebar-item" onclick="playGame('lb8ajoogk')">FNF</div><div class="sidebar-item" onclick="playGame('qdce3jrx4')">GTA</div><div class="sidebar-item" onclick="playGame('jwwzuyusz')">skypack</div><div class="sidebar-item" onclick="playGame('oj2kl5bf6')">Drift Boss</div><div class="sidebar-item" onclick="playGame('ewtal7932')">Drive Mad</div><div class="sidebar-item" onclick="playGame('id1b2l8lh')">grow a garden</div><div class="sidebar-item" onclick="playGame('thz2gntz4')">Granny</div>
+        </nav>
+    </aside>
+    
+
     <div class="container">
         <header>
-            <h1>My Unblocked Games</h1>
+            
             <div class="prompt-text">Welcome to the best unblocked games site ever!</div>
-            <div class="search-container">
-                <input type="text" id="gameSearch" placeholder="Search for a game...">
-            </div>
+            
         </header>
 
         <main id="gameGrid" class="grid">
@@ -240,6 +252,62 @@
                     <div class="game-info">
                         <h3>EagleCraft Minecraft</h3>
                         <button onclick="playGame('arfj2zxot')">Play Now</button>
+                    </div>
+                </div>
+            
+                <div class="game-card" data-name="fnf">
+                    <img src="https://loremflickr.com/400/300/FNF,game" alt="FNF">
+                    <div class="game-info">
+                        <h3>FNF</h3>
+                        <button onclick="playGame('lb8ajoogk')">Play Now</button>
+                    </div>
+                </div>
+            
+                <div class="game-card" data-name="gta">
+                    <img src="https://loremflickr.com/400/300/GTA,game" alt="GTA">
+                    <div class="game-info">
+                        <h3>GTA</h3>
+                        <button onclick="playGame('qdce3jrx4')">Play Now</button>
+                    </div>
+                </div>
+            
+                <div class="game-card" data-name="skypack">
+                    <img src="https://loremflickr.com/400/300/skypack,game" alt="skypack">
+                    <div class="game-info">
+                        <h3>skypack</h3>
+                        <button onclick="playGame('jwwzuyusz')">Play Now</button>
+                    </div>
+                </div>
+            
+                <div class="game-card" data-name="drift boss">
+                    <img src="https://loremflickr.com/400/300/Drift%20Boss,game" alt="Drift Boss">
+                    <div class="game-info">
+                        <h3>Drift Boss</h3>
+                        <button onclick="playGame('oj2kl5bf6')">Play Now</button>
+                    </div>
+                </div>
+            
+                <div class="game-card" data-name="drive mad">
+                    <img src="https://loremflickr.com/400/300/Drive%20Mad,game" alt="Drive Mad">
+                    <div class="game-info">
+                        <h3>Drive Mad</h3>
+                        <button onclick="playGame('ewtal7932')">Play Now</button>
+                    </div>
+                </div>
+            
+                <div class="game-card" data-name="grow a garden">
+                    <img src="https://loremflickr.com/400/300/grow%20a%20garden,game" alt="grow a garden">
+                    <div class="game-info">
+                        <h3>grow a garden</h3>
+                        <button onclick="playGame('id1b2l8lh')">Play Now</button>
+                    </div>
+                </div>
+            
+                <div class="game-card" data-name="granny">
+                    <img src="https://loremflickr.com/400/300/Granny,game" alt="Granny">
+                    <div class="game-info">
+                        <h3>Granny</h3>
+                        <button onclick="playGame('thz2gntz4')">Play Now</button>
                     </div>
                 </div>
             
