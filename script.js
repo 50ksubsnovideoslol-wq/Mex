@@ -143,32 +143,37 @@ function updateMostPlayedUI() {
     renderGrid(grid, sorted);
 }
 
-function renderGrid(container, games) {
-    container.innerHTML = games.map(game => `
-        <div class="game-card ${likedGames.includes(game.id) ? 'liked' : ''} ${dislikedGames.includes(game.id) ? 'disliked' : ''} ${favoriteGames.includes(game.id) ? 'favorite' : ''}" data-name="${game.name.toLowerCase()}" data-category="${game.category}">
-            <div class="card-image">
-                <img src="${game.imageUrl}" alt="${game.name}">
-                <div class="card-actions">
-                    <button class="action-btn like-btn" onclick="toggleLike('${game.id}', event)" title="Like">
-                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                    </button>
-                    <button class="action-btn dislike-btn" onclick="toggleDislike('${game.id}', event)" title="Dislike">
-                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M19 15l-1.41-1.41L13 18.17V2H11v16.17l-4.59-4.58L5 15l7 7 7-7z"/></svg>
-                    </button>
-                    <button class="action-btn fav-btn" onclick="toggleFavorite('${game.id}', event)" title="Favorite">
-                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    </button>
-                </div>
-            </div>
-            <div class="game-info">
-                <div class="game-meta">
-                    <span class="category-tag">${game.category}</span>
-                </div>
-                <h3>${game.name}</h3>
-                <button class="play-btn" onclick="playGame('${game.id}')">Play Now</button>
-            </div>
-        </div>
-    `).join('');
+function renderGrid(container, items) {
+    container.innerHTML = items.map(game => {
+        const isLiked = likedGames.includes(game.id);
+        const isDisliked = dislikedGames.includes(game.id);
+        const isFav = favoriteGames.includes(game.id);
+        const category = game.category || 'General';
+        
+        return '<div class="game-card ' + (isLiked ? 'liked' : '') + ' ' + (isDisliked ? 'disliked' : '') + ' ' + (isFav ? 'favorite' : '') + '" data-name="' + game.name.toLowerCase().replace(/"/g, '&quot;') + '" data-category="' + category.replace(/"/g, '&quot;') + '">' +
+            '<div class="card-image">' +
+                '<img src="' + game.imageUrl + '" alt="' + game.name.replace(/"/g, '&quot;') + '">' +
+                '<div class="card-actions">' +
+                    '<button class="action-btn like-btn" onclick="toggleLike('' + game.id + '', event)" title="Like">' +
+                        '<svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>' +
+                    '</button>' +
+                    '<button class="action-btn dislike-btn" onclick="toggleDislike('' + game.id + '', event)" title="Dislike">' +
+                        '<svg viewBox="0 0 24 24" width="18" height="18"><path d="M19 15l-1.41-1.41L13 18.17V2H11v16.17l-4.59-4.58L5 15l7 7 7-7z"/></svg>' +
+                    '</button>' +
+                    '<button class="action-btn fav-btn" onclick="toggleFavorite('' + game.id + '', event)" title="Favorite">' +
+                        '<svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>' +
+                    '</button>' +
+                '</div>' +
+            '</div>' +
+            '<div class="game-info">' +
+                '<div class="game-meta">' +
+                    '<span class="category-tag">' + category + '</span>' +
+                '</div>' +
+                '<h3>' + game.name + '</h3>' +
+                '<button class="play-btn" onclick="playGame('' + game.id + '')">Play Now</button>' +
+            '</div>' +
+        '</div>';
+    }).join('');
 }
 
 function updateRecommendations() {
