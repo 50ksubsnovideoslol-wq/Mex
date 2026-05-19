@@ -1,10 +1,10 @@
 :root {
-    --bg: #050505;
-    --card-bg: #111111;
+    --bg: #0f172a;
+    --card-bg: #1e293b;
     --sidebar-bg: #020617;
-    --text: #ffffff;
-    --accent: #22c55e;
-    --accent-hover: #16a34a;
+    --text: #f8fafc;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
     --danger: #ef4444;
 }
 
@@ -119,22 +119,35 @@ body.layout-top {
 }
 
 .right-ad-panel {
-    width: 200px;
-    background: rgba(0,0,0,0.05);
+    width: 300px;
+    flex-shrink: 0;
+    background: rgba(0,0,0,0.1);
     border-left: 1px solid rgba(255,255,255,0.05);
-    padding: 1rem;
+    padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     position: sticky;
     top: 0;
     height: 100vh;
+    z-index: 50;
+    overflow-y: auto;
+}
+
+.right-ad-panel a {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .right-ad-panel img {
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    height: auto;
+    max-height: calc(100vh - 150px);
+    object-fit: contain;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
 }
 
 .ad-label {
@@ -521,26 +534,26 @@ h1 {
 }
 
 #gameFrameContainer {
-    height: calc(100% - 160px);
+    height: calc(100% - 250px);
 }
 
 .game-footer-ad {
-    height: 90px;
-    background: #111;
+    height: 180px;
+    background: #0a0a0a;
     border-top: 1px solid rgba(255,255,255,0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
-    gap: 4px;
+    padding: 1.5rem;
+    gap: 12px;
 }
 
 .game-footer-ad img {
-    height: 60px;
+    height: 120px;
     max-width: 100%;
     object-fit: contain;
-    border-radius: 4px;
+    border-radius: 12px;
 }
 
 #gameFrameContainer iframe {
