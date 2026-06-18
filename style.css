@@ -1,10 +1,10 @@
 :root {
-    --bg: #050505;
-    --card-bg: #111111;
-    --sidebar-bg: #020617;
-    --text: #ffffff;
-    --accent: #22c55e;
-    --accent-hover: #16a34a;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --sidebar-bg: #ffffff;
+    --text: #0f172a;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
     --danger: #ef4444;
 }
 
@@ -534,7 +534,7 @@ h1 {
 }
 
 #gameFrameContainer {
-    height: calc(100% - 250px);
+    height: calc(100% - 70px);
 }
 
 .game-footer-ad {
