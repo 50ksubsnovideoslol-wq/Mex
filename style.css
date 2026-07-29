@@ -1,10 +1,10 @@
 :root {
-    --bg: #050505;
-    --card-bg: #111111;
+    --bg: #020617;
+    --card-bg: #0f172a;
     --sidebar-bg: #020617;
-    --text: #ffffff;
-    --accent: #22c55e;
-    --accent-hover: #16a34a;
+    --text: #f1f5f9;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
     --danger: #ef4444;
 }
 
